@@ -28,7 +28,7 @@ public class BaseDriver {
         //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
     }
 
-    @AfterClass
+   // @AfterClass
     public void TearDown() {
         Myfunc.Wait(3);
         driver.quit();
