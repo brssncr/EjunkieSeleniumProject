@@ -30,19 +30,6 @@ public class BaseDriverParameter {
         WaitTime = new WebDriverWait(driver, Duration.ofSeconds(20));
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
        // driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-        LoginTest();
-    }
-
-    public void LoginTest() {
-        driver.get("http://opencart.abstracta.us/index.php?route=account/login");
-        WebElement email = driver.findElement(By.xpath("//input[@name='email']"));
-        email.sendKeys("geyat20709@boyaga.com");
-        WebElement password = driver.findElement(By.xpath("//input[@name='password']"));
-        password.sendKeys("taner12345");
-        driver.findElement(By.xpath("//input[@type='submit']")).click();
-        driver.findElement(By.xpath("//*[@id='details-button']")).click();
-        driver.findElement(By.xpath("//*[@id='proceed-link']")).click();
-        Assert.assertTrue(driver.getTitle().contains("My Account"), "aranan mesaj ");
     }
 
     @AfterClass
