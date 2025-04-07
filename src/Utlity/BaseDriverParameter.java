@@ -26,10 +26,10 @@ public class BaseDriverParameter {
             case "edge": driver = new EdgeDriver();break;
             default: driver = new ChromeDriver();break;
         }
-        driver.manage().window().maximize();// Ekranı max yapıyor.
+        driver.manage().window().maximize();
         WaitTime = new WebDriverWait(driver, Duration.ofSeconds(20));
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20)); // 20 sn mühlet: sayfayı yükleme mühlet
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20)); // 20 sn mühlet: elementi bulma mühleti
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
+       // driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         LoginTest();
     }
 

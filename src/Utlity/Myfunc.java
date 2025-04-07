@@ -1,9 +1,9 @@
 package Utlity;
 
 public class Myfunc {
-    public static void Wait(int saniye){
+    public static void Wait(int wait){
         try {
-            Thread.sleep(saniye*1000);
+            Thread.sleep(wait*1000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
