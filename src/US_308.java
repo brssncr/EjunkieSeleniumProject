@@ -1,4 +1,5 @@
 import Utlity.BaseDriver;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -14,8 +15,8 @@ public class US_308 extends BaseDriver {
         actionDriver.scrollToElement(eCommerceButton).moveToElement(eCommerceButton).click().build().perform();
 
         wait.until(ExpectedConditions.urlMatches("https://www.e-junkie.com"));
+        Assert.assertTrue("Siteye geçiş yapılamadı.",driver.getCurrentUrl().contains("e-junkie"));
     }
-
     @Test(priority = 2)
     public void navigateToTheVideo() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"offerModal\"]/div[2]/section/div")));
@@ -32,6 +33,5 @@ public class US_308 extends BaseDriver {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("button[title='Oynat']")));
         wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button[title='Oynat']")));
         driver.findElement(By.cssSelector("button[title='Oynat']")).click();
-
     }
 }
