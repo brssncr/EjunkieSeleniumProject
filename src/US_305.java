@@ -42,5 +42,8 @@ public class US_305 extends BaseDriver {
 
         WebElement cardNumberPlaceHolder = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@autocomplete='cc-number']")));
         cardNumberPlaceHolder.sendKeys("4242424242424242");
+
+        WebElement expiration = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@class='InputElement is-empty Input Input--empty']")));
+        expiration.sendKeys("1225");
     }
 }
