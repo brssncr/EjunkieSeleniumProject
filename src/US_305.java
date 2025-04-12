@@ -39,5 +39,8 @@ public class US_305 extends BaseDriver {
         namePlaceHolder.sendKeys("´TEAMSIX");
 
         driver.switchTo().frame(1);
+
+        WebElement cardNumberPlaceHolder = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@autocomplete='cc-number']")));
+        cardNumberPlaceHolder.sendKeys("4242424242424242");
     }
 }
