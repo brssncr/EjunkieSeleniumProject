@@ -22,6 +22,8 @@ public class US_301 {
     public void Test1() {
         driver.get("https://shopdemo.fatfreeshop.com/?");
 
+        List<WebElement> boxes = driver.findElements(By.cssSelector("div.box"));
+
             }
         }
 
