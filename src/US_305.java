@@ -51,5 +51,7 @@ public class US_305 extends BaseDriver {
         cvv.sendKeys("000");
 
         Myfunc.Wait(20);
+
+        driver.switchTo().parentFrame();
     }
 }
