@@ -35,8 +35,12 @@ public class US_301 {
 
         WebElement cartModal = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("iframe.EJIframeV3")));
         driver.switchTo().frame(cartModal);
-    }
-    }
 
+        WebElement addPromoBtn = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button[class='Apply-Button Show-Promo-Code-Button']")));
+        addPromoBtn.click();
+
+
+    }
+}
 
 
