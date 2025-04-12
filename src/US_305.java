@@ -3,7 +3,9 @@ import Utlity.Myfunc;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -13,6 +15,8 @@ import java.util.List;
 public class US_305 extends BaseDriver {
     @Test
     public void paymentProcessApprocalAndDowload() {
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
         driver.get("https://shopdemo.fatfreeshop.com/?");
 
         List<WebElement> boxes = driver.findElements(By.cssSelector("div.box"));
@@ -38,7 +42,7 @@ public class US_305 extends BaseDriver {
         confirmEmailPlaceHolder.sendKeys("team006test@gmail.com");
 
         WebElement namePlaceHolder = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@placeholder='Name On Card']")));
-        namePlaceHolder.sendKeys("´TEAMSIX");
+        namePlaceHolder.sendKeys("TEAMSIX");
 
         driver.switchTo().frame(1);
 
