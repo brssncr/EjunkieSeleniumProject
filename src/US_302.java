@@ -1,5 +1,11 @@
 import Utlity.BaseDriver;
 
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.By;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
 public class US_302 extends BaseDriver {
 
     @Test
@@ -8,15 +14,15 @@ public class US_302 extends BaseDriver {
 
         wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".Payment-Button.Credit-Card")));
 
-        driver.switchTo().frmae("EJIframe");
+        driver.switchTo().frame("EJIframe");
 
         wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".Payment-Button.Credit-Card")));
 
         driver.findElement(By.cssSelector("butoon[type='submit']")).click();
 
-        String emailError = driver.findElement(By.id("SnackBar")).get.text();
+        String emailError = driver.findElement(By.id("SnackBar")).getText();
 
-        Assert.assertTrue(emailError.contains("Invalid Email")) || emailError.contains("Geçersiz");
+        Assert.assertTrue(emailError.contains("Invalid Email") || emailError.contains("Geçersiz"), "Hata mesajı beklenenden farklı: " + emailError);
 
         driver.switchTo().defaultContent();
 
