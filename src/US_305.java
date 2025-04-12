@@ -1,4 +1,5 @@
 import Utlity.BaseDriver;
+import Utlity.Myfunc;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -48,5 +49,7 @@ public class US_305 extends BaseDriver {
 
         WebElement cvv = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@autocomplete='cc-csc']")));
         cvv.sendKeys("000");
+
+        Myfunc.Wait(20);
     }
 }
