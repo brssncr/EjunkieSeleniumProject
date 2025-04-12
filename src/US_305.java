@@ -31,5 +31,8 @@ public class US_305 extends BaseDriver {
 
         WebElement emailPlaceHolder = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@placeholder='Email']")));
         emailPlaceHolder.sendKeys("team006test@gmail.com");
+
+        WebElement confirmEmailPlaceHolder = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@placeholder='Confirm Email']")));
+        confirmEmailPlaceHolder.sendKeys("team006test@gmail.com");
     }
 }
