@@ -24,6 +24,10 @@ public class US_301 {
 
         List<WebElement> boxes = driver.findElements(By.cssSelector("div.box"));
 
+        for (WebElement box : boxes) {
+            if (box.findElement(By.cssSelector("h4.title")).getText().equals("Demo eBook")) {
+                box.findElement(By.cssSelector("button.view_product")).click();
+                break;
             }
         }
 
