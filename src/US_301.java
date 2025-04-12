@@ -45,7 +45,10 @@ public class US_301 {
         WebElement applyBtn = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button[class='Promo-Apply']")));
         applyBtn.click();
 
+        WebElement messsage = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.xpath("//div[@id='SnackBar']//span[contains(text(),'Invalid promo code')]")));
 
+        Assert.assertTrue("Invalid promo code mesajı görünmüyor!", messsage.getText().contains("Invalid promo code"));
     }
 }
 
