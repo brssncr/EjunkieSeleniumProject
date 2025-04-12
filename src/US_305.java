@@ -1,5 +1,6 @@
 import Utlity.BaseDriver;
 import Utlity.Myfunc;
+import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -58,5 +59,8 @@ public class US_305 extends BaseDriver {
         payBtn.click();
 
         driver.switchTo().defaultContent();
+
+        WebElement shoppingCartMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class='green_text_margin']")));
+        Assert.assertTrue("Siparişiniz Hatalı", shoppingCartMessage.getText().contains("your order is confirmed. Thank you!"));
     }
 }
