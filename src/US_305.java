@@ -28,5 +28,8 @@ public class US_305 extends BaseDriver {
 
         WebElement creditCardButton = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button.Payment-Button.CC")));
         creditCardButton.click();
+
+        WebElement emailPlaceHolder = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@placeholder='Email']")));
+        emailPlaceHolder.sendKeys("team006test@gmail.com");
     }
 }
