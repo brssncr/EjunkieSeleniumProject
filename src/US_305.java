@@ -69,5 +69,8 @@ public class US_305 extends BaseDriver {
         Assert.assertEquals("Fiyatlar uyuşmuyor",
                 qtyPrice.getText().replaceAll("Qty\\(\\d+\\)\\s*USD\\s*", ""),
                 totalPrice.getText().replaceAll("[^0-9.]", ""));
+
+        WebElement downloadBtn = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("span[class='download_btn top10']")));
+        downloadBtn.click();
     }
 }
