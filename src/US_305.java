@@ -37,5 +37,7 @@ public class US_305 extends BaseDriver {
 
         WebElement namePlaceHolder = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@placeholder='Name On Card']")));
         namePlaceHolder.sendKeys("´TEAMSIX");
+
+        driver.switchTo().frame(1);
     }
 }
