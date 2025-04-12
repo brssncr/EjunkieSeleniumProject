@@ -72,5 +72,7 @@ public class US_305 extends BaseDriver {
 
         WebElement downloadBtn = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("span[class='download_btn top10']")));
         downloadBtn.click();
+
+        driver.quit();
     }
 }
