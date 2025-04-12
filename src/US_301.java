@@ -20,8 +20,9 @@ public class US_301 {
 
     @Test
     public void Test1() {
+        driver.get("https://shopdemo.fatfreeshop.com/?");
 
-    }
+            }
+        }
 
-    }
 
