@@ -62,5 +62,8 @@ public class US_305 extends BaseDriver {
 
         WebElement shoppingCartMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class='green_text_margin']")));
         Assert.assertTrue("Siparişiniz Hatalı", shoppingCartMessage.getText().contains("your order is confirmed. Thank you!"));
+
+        WebElement qtyPrice = driver.findElement(By.cssSelector("div[class='col-md-3 col-sm-3 col-xs-4 text-right'] > :nth-child(1)"));
+        WebElement totalPrice = driver.findElement(By.cssSelector("div[class='col-md-6 col-sm-6 col-xs-6 text-right'] > :nth-child(1)"));
     }
 }
