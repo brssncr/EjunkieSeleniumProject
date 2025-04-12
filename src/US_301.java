@@ -31,4 +31,12 @@ public class US_301 {
             }
         }
 
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        WebElement cartModal = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("iframe.EJIframeV3")));
+        driver.switchTo().frame(cartModal);
+    }
+    }
+
+
 
