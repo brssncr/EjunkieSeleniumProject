@@ -65,5 +65,9 @@ public class US_305 extends BaseDriver {
 
         WebElement qtyPrice = driver.findElement(By.cssSelector("div[class='col-md-3 col-sm-3 col-xs-4 text-right'] > :nth-child(1)"));
         WebElement totalPrice = driver.findElement(By.cssSelector("div[class='col-md-6 col-sm-6 col-xs-6 text-right'] > :nth-child(1)"));
+
+        Assert.assertEquals("Fiyatlar uyuşmuyor",
+                qtyPrice.getText().replaceAll("Qty\\(\\d+\\)\\s*USD\\s*", ""),
+                totalPrice.getText().replaceAll("[^0-9.]", ""));
     }
 }
