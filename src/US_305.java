@@ -45,5 +45,8 @@ public class US_305 extends BaseDriver {
 
         WebElement expiration = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@class='InputElement is-empty Input Input--empty']")));
         expiration.sendKeys("1225");
+
+        WebElement cvv = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@autocomplete='cc-csc']")));
+        cvv.sendKeys("000");
     }
 }
