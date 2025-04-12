@@ -39,6 +39,8 @@ public class US_301 {
         WebElement addPromoBtn = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button[class='Apply-Button Show-Promo-Code-Button']")));
         addPromoBtn.click();
 
+        WebElement addPromoPlaceHolder = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input[class='Promo-Code-Value']")));
+        addPromoPlaceHolder.sendKeys("123456");
 
     }
 }
