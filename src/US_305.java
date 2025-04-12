@@ -56,5 +56,7 @@ public class US_305 extends BaseDriver {
 
         WebElement payBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@class='Pay-Button']")));
         payBtn.click();
+
+        driver.switchTo().defaultContent();
     }
 }
