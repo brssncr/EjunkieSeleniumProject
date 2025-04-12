@@ -2,7 +2,9 @@ import Utlity.BaseDriver;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.List;
 
 public class US_305 extends BaseDriver {
@@ -18,5 +20,6 @@ public class US_305 extends BaseDriver {
                 break;
             }
         }
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
     }
 }
