@@ -25,5 +25,8 @@ public class US_305 extends BaseDriver {
 
         WebElement cartModal = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("iframe.EJIframeV3")));
         driver.switchTo().frame(cartModal);
+
+        WebElement creditCardButton = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button.Payment-Button.CC")));
+        creditCardButton.click();
     }
 }
