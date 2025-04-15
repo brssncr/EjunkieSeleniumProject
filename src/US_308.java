@@ -6,6 +6,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.Test;
 
 public class US_308 extends BaseDriver {
+
     @Test(priority = 1)
     public void openingTheWebsite() {
         driver.get("https://shopdemo.fatfreeshop.com/?");
@@ -15,14 +16,15 @@ public class US_308 extends BaseDriver {
         actionDriver.scrollToElement(eCommerceButton).moveToElement(eCommerceButton).click().build().perform();
 
         wait.until(ExpectedConditions.urlMatches("https://www.e-junkie.com"));
-        Assert.assertTrue("Siteye geçiş yapılamadı.",driver.getCurrentUrl().contains("e-junkie"));
+        Assert.assertTrue("Siteye geçiş yapılamadı.", driver.getCurrentUrl().contains("e-junkie"));
     }
+
     @Test(priority = 2)
     public void navigateToTheVideo() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"offerModal\"]/div[2]/section/div")));
-        WebElement blueButtonForVideo =driver.findElement(By.cssSelector("a[class='blue_btn'][onclick='toggleYoutubeModal(true)']"));
+        WebElement blueButtonForVideo = driver.findElement(By.cssSelector("a[class='blue_btn'][onclick='toggleYoutubeModal(true)']"));
 
-        actionDriver.moveToElement(blueButtonForVideo,-100,-100).click().build().perform();
+        actionDriver.moveToElement(blueButtonForVideo, -100, -100).click().build().perform();
         wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//*[@id=\"offerModal\"]/div[2]/section/div")));
 
         actionDriver.moveToElement(blueButtonForVideo).click().build().perform();

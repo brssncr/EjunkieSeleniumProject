@@ -13,6 +13,7 @@ import java.time.Duration;
 import java.util.List;
 
 public class US_305 extends BaseDriver {
+
     @Test
     public void paymentProcessApprocalAndDowload() {
         WebDriver driver = new ChromeDriver();
@@ -20,13 +21,13 @@ public class US_305 extends BaseDriver {
         driver.get("https://shopdemo.fatfreeshop.com/?");
 
         List<WebElement> boxes = driver.findElements(By.cssSelector("div.box"));
-
         for (WebElement box : boxes) {
             if (box.findElement(By.cssSelector("h4.title")).getText().equals("Demo eBook")) {
                 box.findElement(By.cssSelector("button.view_product")).click();
                 break;
             }
         }
+
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 
         WebElement cartModal = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("iframe.EJIframeV3")));

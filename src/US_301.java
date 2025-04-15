@@ -18,6 +18,7 @@ import java.util.List;
 import static Utlity.BaseDriver.driver;
 
 public class US_301 extends BaseDriver {
+
     @Test
     public void addingEbook() {
         WebDriver driver = new ChromeDriver();
@@ -25,13 +26,13 @@ public class US_301 extends BaseDriver {
         driver.get("https://shopdemo.fatfreeshop.com/?");
 
         List<WebElement> boxes = driver.findElements(By.cssSelector("div.box"));
-
         for (WebElement box : boxes) {
             if (box.findElement(By.cssSelector("h4.title")).getText().equals("Demo eBook")) {
                 box.findElement(By.cssSelector("button.view_product")).click();
                 break;
             }
         }
+
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
         WebElement cartModal = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("iframe.EJIframeV3")));
@@ -53,5 +54,3 @@ public class US_301 extends BaseDriver {
         driver.quit();
     }
 }
-
-

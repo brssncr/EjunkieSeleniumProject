@@ -1,7 +1,6 @@
 import Utlity.BaseDriver;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -13,8 +12,8 @@ import org.openqa.selenium.NoAlertPresentException;
 import java.time.Duration;
 
 public class US_306 extends BaseDriver {
-
     private Actions actionDriver;
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
     @Test
     public void communicationMessageSendingProcess() {
@@ -22,25 +21,31 @@ public class US_306 extends BaseDriver {
         driver.get("https://shopdemo.e-junkie.com/");
         WebElement contactUsButton = driver.findElement(By.linkText("Contact Us"));
         actionDriver.moveToElement(contactUsButton).click().perform();
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
         WebElement nameField = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("sender_name")));
         WebElement emailField = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("sender_email")));
         WebElement subjectField = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("sender_subject")));
         WebElement messageField = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("sender_message")));
         WebElement sendButton = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("send_message_button")));
+
         nameField.click();
         nameField.clear();
         nameField.sendKeys("Testing");
+
         emailField.click();
         emailField.clear();
         emailField.sendKeys("team006test@gmail.com");
+
         subjectField.click();
         subjectField.clear();
         subjectField.sendKeys("Test");
+
         messageField.click();
         messageField.clear();
         messageField.sendKeys("The test isn't working.");
+
         sendButton.click();
+
         try {
             Alert alert = driver.switchTo().alert();
             String alertText = alert.getText();
@@ -50,6 +55,7 @@ public class US_306 extends BaseDriver {
         } catch (NoAlertPresentException e) {
             System.out.println("No alert found.");
         }
+
         try {
             WebDriverWait captchaWait = new WebDriverWait(driver, Duration.ofSeconds(10));
             WebElement captchaError = captchaWait.until(ExpectedConditions.presenceOfElementLocated(By.id("myCaptcha")));

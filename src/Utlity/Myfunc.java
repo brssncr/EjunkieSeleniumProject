@@ -8,6 +8,7 @@ public class Myfunc {
             throw new RuntimeException(e);
         }
     }
+
     public static int RandomSayıVer(int min,int max){
         return (int)(Math.random()*(max-min))+min;
     }
